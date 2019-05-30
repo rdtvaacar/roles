@@ -8,41 +8,73 @@ This is where your description should go. Take a look at [contributing.md](contr
 
 ## Installation
 
-Via Composer
+ #### Via Composer
 
 ``` bash
 $ composer require acr/roles
 ```
-Php Artisan
+##### Php Artisan
 ```bash
 $ php artisan migrate
 ```
 ```bash
 $ php artisan make:model Role
 ```
-Insert Models User.php
+```bash
+$ php artisan vendor:publish --provider="acr\roles\rolesServiceProvider"
+```
+
+##### Insert Models User.php
 ```php
 function roles() {
    return $this->belongsToMany('App\Role');
 }
 ```
-
+##### controller.php
+```php
+$acrRolesFilesPathJs = "/vendor/acr/roles/static/js";
+$acrRolesFilesPathCss = "/vendor/acr/roles/static/css";
+$scannedDirectoryJs = array_diff(scandir($acrRolesFilesPathJs), array('..', '.'));
+$scannedDirectoryCss = array_diff(scandir($acrRolesFilesPathCss), array('..', '.'));
+```
+##### layout.blade.php
+```html
+<html>
+    <head>
+        <!-- push target to head -->
+        @stack('styles')
+        @stack('scripts')
+    </head>
+    <body>
+        <!-- or push target to footer -->
+        @stack('scripts')
+    </body>
+</html>
+```
+##### view.blade.php
+```html
+@push('styles')
+   @foreach($scannedDirectoryCss as $file) 
+      <link href="{{"/$file"}}" rel="stylesheet">
+   @endforeach
+@endpush
+@push('scripts')
+    @foreach($scannedDirectoryJs as $file) 
+      <script type="text/javascript" src="{{ "/$file" }}"></script>
+    @endforeach
+@endpush
+```
 ## Usage
-
-## Change log
-
-Please see the [changelog](changelog.md) for more information on what has changed recently.
+#### Your link of user page and add roles
+```html
+ #/acr/roles/user/{{$user_id}}
+```
 
 ## Testing
 
 ``` bash
 $ composer test
 ```
-
-## Contributing
-
-Please see [contributing.md](contributing.md) for details and a todolist.
-
 ## Security
 
 If you discover any security related issues, please email author email instead of using the issue tracker.
@@ -50,7 +82,6 @@ If you discover any security related issues, please email author email instead o
 ## Credits
 
 - [author name][link-author]
-- [All Contributors][link-contributors]
 
 ## License
 
@@ -65,5 +96,5 @@ license. Please see the [license file](license.md) for more information.
 [link-downloads]: https://packagist.org/packages/acr/roles
 [link-travis]: https://travis-ci.org/acr/roles
 [link-styleci]: https://styleci.io/repos/12345678
-[link-author]: https://github.com/acr
+[link-author]: https://github.com/rdtvaacar
 [link-contributors]: ../../contributors
