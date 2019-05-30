@@ -10,6 +10,12 @@
         }
     ],
     "homepage": "https://github.com/acr/roles",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/acr/roles"
+        }
+    ],
     "keywords": ["Laravel", "roles"],
     "require": {
         "illuminate/support": "~5"
