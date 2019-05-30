@@ -26,6 +26,10 @@ $ php artisan migrate
 ```bash
 $ php artisan make:model Role
 ```
+##### add config/app.php
+```php
+acr\roles\rolesServiceProvider::class,
+```
 ##### Insert Models User.php
 ```php
 function roles() {

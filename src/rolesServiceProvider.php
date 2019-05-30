@@ -68,7 +68,7 @@ class rolesServiceProvider extends ServiceProvider
 
         // Publishing assets.
         $this->publishes([
-            __DIR__ . '/views/js/roles/build' => public_path('vendor/acr'),
+            __DIR__ . '/views/js/roles/build' => public_path('vendor/acr/roles/'),
         ], 'roles.views');
 
         // Publishing the translation files.
