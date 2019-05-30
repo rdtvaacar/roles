@@ -74,6 +74,7 @@ $scannedDirectoryCss = array_diff(scandir($acrRolesFilesPathCss), array('..', '.
 #### Your link of user page and add roles
 ```html
  #/acr/roles/user/{{$user_id}}
+ #/acr/roles/new
 ```
 
 ## Testing
