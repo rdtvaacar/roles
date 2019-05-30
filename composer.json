@@ -38,6 +38,9 @@
             "aliases": {
                 "roles": "acr\\roles\\Facades\\roles"
             }
+        },
+        "branch-alias": {
+            "dev-master": "dev"
         }
     }
 }
