@@ -18,6 +18,9 @@ $ composer require acr/roles
 $ php artisan vendor:publish --provider="acr\roles\rolesServiceProvider"
 ```
 ```bash
+$ php artisan make:auth
+```
+```bash
 $ php artisan migrate
 ```
 ```bash
