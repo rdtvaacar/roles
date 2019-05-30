@@ -15,15 +15,14 @@ $ composer require acr/roles
 ```
 ##### Php Artisan
 ```bash
+$ php artisan vendor:publish --provider="acr\roles\rolesServiceProvider"
+```
+```bash
 $ php artisan migrate
 ```
 ```bash
 $ php artisan make:model Role
 ```
-```bash
-$ php artisan vendor:publish --provider="acr\roles\rolesServiceProvider"
-```
-
 ##### Insert Models User.php
 ```php
 function roles() {
@@ -87,14 +86,14 @@ If you discover any security related issues, please email author email instead o
 
 license. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/acr/roles.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/acr/roles.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/acr/roles/master.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/rdtvaacar/roles.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/rdtvaacar/roles.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/rdtvaacar/roles/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
-[link-packagist]: https://packagist.org/packages/acr/roles
-[link-downloads]: https://packagist.org/packages/acr/roles
-[link-travis]: https://travis-ci.org/acr/roles
+[link-packagist]: https://packagist.org/packages/rdtvaacar/roles
+[link-downloads]: https://packagist.org/packages/rdtvaacar/roles
+[link-travis]: https://travis-ci.org/rdtvaacar/roles
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/rdtvaacar
 [link-contributors]: ../../contributors
