@@ -1,7 +1,6 @@
 {
     "name": "acr/roles",
     "description": ":description",
-    "license": "license",
     "authors": [
         {
             "name": "Aydın ACAR",
