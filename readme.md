@@ -3,7 +3,6 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
@@ -13,6 +12,19 @@ Via Composer
 
 ``` bash
 $ composer require acr/roles
+```
+Php Artisan
+```bash
+$ php artisan migrate
+```
+```bash
+$ php artisan make:model Role
+```
+Insert Models User.php
+```php
+function roles() {
+   return $this->belongsToMany('App\Role');
+}
 ```
 
 ## Usage

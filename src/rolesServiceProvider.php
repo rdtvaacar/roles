@@ -15,8 +15,8 @@ class rolesServiceProvider extends ServiceProvider
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'acr');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'acr');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
@@ -31,7 +31,7 @@ class rolesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/roles.php', 'roles');
+        $this->mergeConfigFrom(__DIR__ . '/../config/roles.php', 'roles');
 
         // Register the service the package provides.
         $this->app->singleton('roles', function ($app) {
@@ -48,7 +48,7 @@ class rolesServiceProvider extends ServiceProvider
     {
         return ['roles'];
     }
-    
+
     /**
      * Console-specific booting.
      *
@@ -58,18 +58,18 @@ class rolesServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/roles.php' => config_path('roles.php'),
+            __DIR__ . '/../config/roles.php' => config_path('roles.php'),
         ], 'roles.config');
 
         // Publishing the views.
-        /*$this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/acr'),
-        ], 'roles.views');*/
+        $this->publishes([
+            __DIR__ . '\views\php' => base_path('resources/views/vendor/acr'),
+        ], 'roles.views');
 
         // Publishing assets.
-        /*$this->publishes([
-            __DIR__.'/../resources/assets' => public_path('vendor/acr'),
-        ], 'roles.views');*/
+        $this->publishes([
+            __DIR__ . '/views/js/roles/build' => public_path('vendor/acr'),
+        ], 'roles.views');
 
         // Publishing the translation files.
         /*$this->publishes([
